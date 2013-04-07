@@ -1,0 +1,54 @@
+.jsDialog_shadow-win8 {
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.75);
+	overflow:auto;
+}
+.jsDialog_container-win8 {
+	margin:30px auto;
+	border:1px solid rgb(82,132,188);
+	background-color:rgb(107,173,246);
+	padding:5px 0px 0px 0px;
+}
+.jsDialog_titlebar-win8 {
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+.jsDialog_titletext-win8 {
+	display:inline-block;
+	height:20px;
+	line-height:20px;
+	font-size:16px;
+	font-family: arial,sans-serif;
+	color:#333;
+}
+.jsDialog_content-win8 {
+	margin:5px;
+	border:1px solid rgb(91,147,209);
+	background-color:#fff;
+}
+.jsDialog_close-win8 {
+	display:block;
+	float:right;
+	height:20px;
+	width:45px;
+	line-height:20px;
+	text-align:center;
+	font-family: arial,sans-serif;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	background-color:rgb(199,80,80);
+	margin:-5px 5px 0px 0px;
+}
+.jsDialog_close-win8:after {
+	content:'X';
+}
+.jsDialog_close-win8:hover {
+	background-color:rgb(224,67,67);
+	cursor:pointer;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jsDialog Documentation</title>
+		<script src="jsDialog.js"></script>
+		<link rel="stylesheet" type="text/css" href="jsDialog-default.css">
+		<link rel="stylesheet" type="text/css" href="jsDialog-win8.css">
+		<link rel="stylesheet" type="text/css" href="jsDialog-lightbox.css">
+	</head>
+	<body>
+		<script>
+			new jsDialog({
+				title:        'Test Dialog',
+				width:        '50%',
+				shadow_close: true,
+				style:        'win8',
+				content:      'test'
+			});
+			new jsDialog({
+				title:        'Test Dialog',
+				width:        '50%',
+				shadow_close: true,
+				//style:        'win8',
+				content:      'test'
+			});
+			new jsDialog({
+				title:        'Test Dialog',
+				width:        '50%',
+				shadow_close: true,
+				style:        'lightbox',
+				content:      'test'
+			});
+		</script>
+	</body>
+</html>

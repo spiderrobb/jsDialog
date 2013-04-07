@@ -1,0 +1,54 @@
+.jsDialog_shadow-lightbox {
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.75);
+	overflow:auto;
+}
+.jsDialog_container-lightbox {
+	margin:30px auto;
+}
+.jsDialog_titlebar-lightbox {
+	margin:0px;
+	padding:5px;
+}
+.jsDialog_titletext-lightbox {
+	display:inline-block;
+	height:20px;
+	line-height:20px;
+	font-size:16px;
+	font-family: arial,sans-serif;
+	color:#fff;
+	font-weight:bold;
+}
+.jsDialog_content-lightbox {
+	background-color:#fff;
+	padding:10px;
+}
+.jsDialog_close-lightbox {
+	display:block;
+	float:right;
+	height:26px;
+	width:26px;
+	line-height:26px;
+	text-align:center;
+	border-radius:13px;
+	font-family: arial,sans-serif;
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	background-color:rgb(199,80,80);
+	border:2px solid #fff;
+	background-color:#000;
+	margin-right:-20px;
+	margin-top:10px;
+}
+.jsDialog_close-lightbox:after {
+	content:'X';
+}
+.jsDialog_close-lightbox:hover {
+	background-color:rgb(224,67,67);
+	cursor:pointer;
+}

@@ -1,0 +1,54 @@
+.jsDialog_shadow-default {
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.75);
+	overflow:auto;
+}
+.jsDialog_container-default {
+	margin:30px auto;
+	border:1px solid #aaa;
+	border-radius:5px;
+	background-color:#fff;
+	padding:5px;
+}
+.jsDialog_titlebar-default {
+	margin:0px;
+	border-bottom:2px solid #aaa;
+	border-radius: 5px 5px 0px 0px;
+	background-color:#eee;
+	padding:10px;
+}
+.jsDialog_titletext-default {
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	font-weight:bold;
+	font-size:20px;
+	font-family: arial,sans-serif;
+	color:#333;
+}
+.jsDialog_close-default {
+	display:block;
+	border:1px solid #ccc;
+	border-radius:3px;
+	float:right;
+	height:30px;
+	line-height:30px;
+	padding:0px 10px 0px 10px;
+	font-family: arial,sans-serif;
+	font-weight:bold;
+	font-size:14px;
+	color:#666;
+}
+.jsDialog_close-default:after {
+	content:'Close';
+}
+.jsDialog_close-default:hover {
+	background-color:#fff;
+	color:#333;
+	border-color:#aaa;
+	cursor:pointer;
+}
