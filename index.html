@@ -13,7 +13,7 @@
 				title: 'Windows 8 Theme',
 				width: '50%',
 				shadow_close: true,
-				style: 'win8',
+				theme: 'win8',
 				content: 'test'
 			});
 			var d2 = new jsDialog({
@@ -26,10 +26,22 @@
 				title: 'Light Box Theme',
 				width: '50%',
 				shadow_close: true,
-				style: 'lightbox',
+				theme: 'lightbox',
 				content: 'test',
 				onclose: function() {
 					alert('dialog 3 has closed.');
+				}
+			});
+			var d4 = new jsDialog({
+				title: 'Windows 8 Theme Custom Color',
+				width: '50%',
+				shadow_close: true,
+				theme: 'win8',
+				content: 'test',
+				style: {
+					container: {
+						backgroundColor: '#eee'
+					}
 				}
 			});
 		</script>
