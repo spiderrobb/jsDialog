@@ -6,9 +6,12 @@
 	right:0px;
 	background-color:rgba(0,0,0,0.75);
 	overflow:auto;
+	text-align:center;
 }
 .jsDialog_container-lightbox {
-	margin:30px auto;
+	margin:30px;
+	display:inline-block;
+	text-align:left;
 }
 .jsDialog_titlebar-lightbox {
 	margin:0px;
@@ -26,6 +29,7 @@
 .jsDialog_content-lightbox {
 	background-color:#fff;
 	padding:10px;
+	border:0px;
 }
 .jsDialog_close-lightbox {
 	display:block;

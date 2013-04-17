@@ -6,12 +6,15 @@
 	right:0px;
 	background-color:rgba(0,0,0,0.75);
 	overflow:auto;
+	text-align:center;
 }
 .jsDialog_container-win8 {
-	margin:30px auto;
+	display:inline-block;
+	margin:30px;
 	border:1px solid rgb(82,132,188);
 	background-color:rgb(107,173,246);
 	padding:5px 0px 0px 0px;
+	text-align:left;
 }
 .jsDialog_titlebar-win8 {
 	margin:0px;

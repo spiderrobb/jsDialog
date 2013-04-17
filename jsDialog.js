@@ -23,8 +23,9 @@ function jsDialog(args){
 	if (typeof args['shadow_close'] != 'undefined') {
 		shadow_close = args['shadow_close'];
 	}
-	// getting on close event
+	// getting events
 	var onclose = args['onclose'] || null;
+	var onload  = args['onload']  || null;
 	
 	// disabling scrollin on document body
 	document.body.style.overflow = 'hidden';
@@ -35,9 +36,17 @@ function jsDialog(args){
 		container:  document.createElement('div'),
 		title_bar:  document.createElement('div'),
 		title_text: document.createElement('span'),
-		close:      document.createElement('a'),
-		content:    document.createElement('div')
+		close:      document.createElement('a')
 	};
+	if (typeof args['url'] != 'undefined') {
+		this.elements['content'] = document.createElement('iframe');
+		this.elements['content'].setAttribute('src', args['url']);
+		if (onload) {
+			this.elements['content'].onload = onload;
+		}
+	} else {
+		this.elements['content'] = document.createElement('div');
+	}
 	
 	// applying any custom style
 	var dialog = this;
@@ -85,7 +94,6 @@ function jsDialog(args){
 	var container = this.elements.container;
 	container.id = 'jsDialog_container_'+jsDialog.count;
 	container.className = 'jsDialog_container-'+theme;
-	container.style.width = width;
 	shadow.appendChild(container);
 	
 	// building dialog title bar
@@ -123,5 +131,7 @@ function jsDialog(args){
 	if (height !== false) {
 		content.style.height = height;
 	}
+	content.style.width = width;
+	
 	container.appendChild(content);
 }

@@ -6,13 +6,16 @@
 	right:0px;
 	background-color:rgba(0,0,0,0.75);
 	overflow:auto;
+	text-align:center;
 }
 .jsDialog_container-default {
-	margin:30px auto;
+	margin:30px;
 	border:1px solid #aaa;
 	border-radius:5px;
 	background-color:#fff;
 	padding:5px;
+	display:inline-block;
+	text-align:left;
 }
 .jsDialog_titlebar-default {
 	margin:0px;
@@ -29,6 +32,9 @@
 	font-size:20px;
 	font-family: arial,sans-serif;
 	color:#333;
+}
+.jsDialog_content-default {
+	border:0px;
 }
 .jsDialog_close-default {
 	display:block;

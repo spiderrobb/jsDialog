@@ -11,20 +11,20 @@
 		<script>
 			var d1 = new jsDialog({
 				title: 'Windows 8 Theme',
-				width: '50%',
+				width: '500px',
 				shadow_close: true,
 				theme: 'win8',
 				content: 'test'
 			});
 			var d2 = new jsDialog({
 				title: 'Default Theme',
-				width: '50%',
+				width: '500px',
 				shadow_close: true,
 				content: 'test'
 			});
 			var d3 = new jsDialog({
 				title: 'Light Box Theme',
-				width: '50%',
+				width: '500px',
 				shadow_close: true,
 				theme: 'lightbox',
 				content: 'test',
@@ -34,14 +34,18 @@
 			});
 			var d4 = new jsDialog({
 				title: 'Windows 8 Theme Custom Color',
-				width: '50%',
-				shadow_close: true,
+				width: '800px',
+				height: '600px',
+				shadow_close: false,
 				theme: 'win8',
-				content: 'test',
+				url: 'http://example.com/',
 				style: {
 					container: {
-						backgroundColor: '#eee'
+						backgroundColor: 'blue'
 					}
+				},
+				onload: function() {
+					alert('content loaded');
 				}
 			});
 		</script>
