@@ -13,18 +13,18 @@ function jsDialog(args){
 	var style = args['style'] || 'default';
 	// getting width of dialog
 	var width = args['width'] || '800px';
+	// getting height of dialog
+	var height = false;
+	if (args['height']) {
+		height = args['height'];
+	}
 	// getting shadow close option
 	var shadow_close = false;
 	if (typeof args['shadow_close'] != 'undefined') {
 		shadow_close = args['shadow_close'];
 	}
 	// getting on close event
-	var onClose = args['onClose'] || null;
-	// getting content
-	var htmlContent = 'No content';
-	if (args['content']) {
-		htmlContent = args['content'];
-	}
+	var onclose = args['onclose'] || null;
 	
 	// disabling scrollin on document body
 	document.body.style.overflow = 'hidden';
@@ -41,9 +41,10 @@ function jsDialog(args){
 	
 	// building close function
 	var dialog = this;
-	var close_function = function(e) {
+	this.close = function(e) {
 		// checking if the correct element has been clicked
-		if (e.target == dialog.elements.close
+		if (!e
+			|| e.target == dialog.elements.close
 			|| e.target == dialog.elements.shadow
 			&& shadow_close
 		) {
@@ -56,8 +57,8 @@ function jsDialog(args){
 			// if jsDialog counter is 0 enable body scrolling
 			document.body.style.overflow = 'auto';
 			// invoking onClose event
-			if (dialog.onClose) {
-				dialog.onClose(e);
+			if (onclose) {
+				onclose(e);
 			}
 		}
 	};
@@ -66,7 +67,7 @@ function jsDialog(args){
 	var shadow = this.elements.shadow;
 	shadow.id = 'jsDialog_shadow_'+jsDialog.count;
 	shadow.className = 'jsDialog_shadow-'+style;
-	shadow.onclick = close_function;
+	shadow.onclick = this.close;
 	document.body.appendChild(shadow);
 	
 	// building dialog container
@@ -99,6 +100,17 @@ function jsDialog(args){
 	var content = this.elements.content;
 	content.id = 'jsDialog_content_'+jsDialog.count;
 	content.className = 'jsDialog_content-'+style;
-	content.innerHTML = htmlContent;
+	// setting content of dialog
+	if (typeof args['content'] == 'object') {
+		content.appendChild(args['content']);
+	} else if (typeof args['content'] == 'string') {
+		content.innerHTML = args['content'];
+	} else {
+		content.innerHTML = 'No Content.';
+	}
+	// setting hight of content if specified
+	if (height !== false) {
+		content.style.height = height;
+	}
 	container.appendChild(content);
 }

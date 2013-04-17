@@ -9,26 +9,28 @@
 	</head>
 	<body>
 		<script>
-			new jsDialog({
-				title:        'Test Dialog',
-				width:        '50%',
+			var d1 = new jsDialog({
+				title: 'Windows 8 Theme',
+				width: '50%',
 				shadow_close: true,
-				style:        'win8',
-				content:      'test'
+				style: 'win8',
+				content: 'test'
 			});
-			new jsDialog({
-				title:        'Test Dialog',
-				width:        '50%',
+			var d2 = new jsDialog({
+				title: 'Default Theme',
+				width: '50%',
 				shadow_close: true,
-				//style:        'win8',
-				content:      'test'
+				content: 'test'
 			});
-			new jsDialog({
-				title:        'Test Dialog',
-				width:        '50%',
+			var d3 = new jsDialog({
+				title: 'Light Box Theme',
+				width: '50%',
 				shadow_close: true,
-				style:        'lightbox',
-				content:      'test'
+				style: 'lightbox',
+				content: 'test',
+				onclose: function() {
+					alert('dialog 3 has closed.');
+				}
 			});
 		</script>
 	</body>
