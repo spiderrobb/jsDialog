@@ -26,6 +26,7 @@ function jsDialog(args){
 	// getting events
 	var onclose = args['onclose'] || null;
 	var onload  = args['onload']  || null;
+	var onopen  = args['onopen']  || null;
 	
 	// disabling scrollin on document body
 	document.body.style.overflow = 'hidden';
@@ -82,13 +83,20 @@ function jsDialog(args){
 			}
 		}
 	};
+
+	// building open function
+	this.open = function() {
+		document.body.appendChild(shadow);
+		if (onopen) {
+			onopen();
+		}
+	};
 	
 	// building dialog shadow
 	var shadow = this.elements.shadow;
 	shadow.id = 'jsDialog_shadow_'+jsDialog.count;
 	shadow.className = 'jsDialog_shadow-'+theme;
 	shadow.onclick = this.close;
-	document.body.appendChild(shadow);
 	
 	// building dialog container
 	var container = this.elements.container;
